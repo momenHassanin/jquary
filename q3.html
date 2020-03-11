@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+		<script type="text/javascript" src="jquery.js"></script>
+
+<script type="text/javascript">
+	 $(document).ready(function () {
+     var count = 0;
+     var c = 5;
+
+    //When user does something to the textarea field
+    $('#text01').on('input paste propertychange keydown', function () {
+
+        //reset span#wordCount text if textarea#reason01 is empty, this avoids
+        //it displaying '299 Words remaining' when empty
+        if (!$("#text01").val()) {
+          $(this).next('#wordCount').html(count + " Words remaining."); 
+        }
+        
+        //removes and ignores URLs within the textarea from the counter
+        var ta = $(this).val();
+        var reg = /((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))\)|))/gi;
+        ta = ta.replace(reg, "");
+        // $('#output').html("<p>" + ta + "</p>"); //debugging
+        //count the number of words
+        var words = ta.match(/[\w]+/gi).length;
+        re2 = new RegExp("^\\s*\\S+(?:\\s+\\S+){0," + (count + 1) + "}");
+        //trim the text if bigger than max_count
+        if (words == c) {     
+            $(this).next('#wordCount').html("Thank YOU ");   
+        } else {
+            $(this).next('#wordCount').html(count + words + " Words remaining.");
+        }
+    });
+}).change();
+</script>
+
+<body>
+
+<textarea name="text01" id="text01" cols="300" rows="20"></textarea>
+
+<span id="wordCount">0 Words remaining.</span>
+
+<span id="output"></span>
+
+</body>
+</html>

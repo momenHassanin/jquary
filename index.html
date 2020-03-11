@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<script src="https://kit.fontawesome.com/f8dd02b116.js" crossorigin="anonymous"></script>
+	<!-- <script src="https://kit.fontawesome.com/f8dd02b116.js" crossorigin="anonymous"></script> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -41,15 +41,16 @@
 			</div>
 			<div class="col-lg-3"> 
 				<h3 class="qt">qty</h3>
-				<input type="text" name="" id="orange" class="orange">
-				<input type="text" name="" id="higeen" class="higeen">
-				<input type="text" name="" id="vitamin" class="vitamin">
-				<input type="text" name="" id="mask" class="mask">
-				<input type="text" name="" id="book" class="book">
-				<input type="text" name="" id="tissue" class="tissue">
-				<input type="text" name="" id="water" class="water">
+				<input type="text" name="" id="orange" value="0" class="orange">
+				<input type="text" name="" id="higeen" value="0" class="higeen">
+				<input type="text" name="" id="vitamin" value="0" class="vitamin">
+				<input type="text" name="" id="mask" value="0" class="mask">
+				<input type="text" name="" id="book" value="0" class="book">
+				<input type="text" name="" id="tissue" value="0" class="tissue">
+				<input type="text" name="" id="water" value="0" class="water">
+
 				<br><br><br>
-				<button id="sum">Submet</button>
+				<button id="submet">Submet</button>
 			</div>
 			<div class="col-lg-3">
 				<h3 class="qt">Total</h3>
@@ -60,6 +61,7 @@
 				<input type="text" name="" id="tbook" class="tot" disabled="0" value="0">
 				<input type="text" name="" id="ttissue" class="tot" disabled="0" value="0">
 				<input type="text" name="" id="twater" class="tot" disabled="0" value="0">
+
 				<br><br><br>
 				<div class="mr-5 border">
 					<h5 id="avg">AVG. Total</h5>
@@ -86,44 +88,48 @@
 			<div class="col-lg-6">
 				<div id="q3">
 					<h1 class="ml-5">Q3: Talk About yourSelf</h1>
-					<textarea id="txt" class="ml-4 mt-3 mb-4"></textarea>
-					<div class="text-center">
+					<textarea name="txtScript" id="word_count" class="ml-4 mt-3 mb-4 txt"></textarea>
+					<div class="text-right">
+						<p>Total word Count : <span id="display_count">0</span> words.</p>
+					</div>
+					<div class="text-left ml-5 hid">
 						<span>Thank You ^_^ </span>
 						<button class="send">Send</button>
 					</div>
 				</div>
 				<br>
 				<br>
-
 			</div>
+			<div class="col-lg-1">
 			<div class="vl"></div>
-			<div class="col-lg-6">
+		</div>
+			<div class="col-lg-5">
 				<div id="q4">
 					<h1 class=" ml-5 mb-4">Q4: country</h1>
 					<div class="row">
 						<div class="col-sm-3">
-							<select>
+							<select class="country">
 								<option disabled selected>country</option>
-								<option>jordan</option>
-								<option>USA</option>
+								<option value="jordan" id="c1">jordan</option>
+								<option value="USA" class="E">USA</option>
 							</select>
 						</div>
 						<div class="col-sm-3">
-							<select >
-								<option disabled selected>City</option>
+							<select class="city">
+								<option disabled selected class="city">City</option>
 								<option>Amman</option>
 								<option>Tafila</option>
 							</select>
 						</div>
 						<div class="col-sm-3">
-							<select>
+							<select class="usa">
 								<option disabled selected>state</option>
 								<option>dfd</option>
 								<option>Tafila</option>
 							</select>
 						</div>
 						<div class="col-sm-3">
-							<select>
+							<select class="usa">
 								<option disabled selected>ZIP Code</option>
 								<option>12124</option>
 								<option>21342</option>
@@ -136,6 +142,8 @@
 		<br>
 		<br>
 		<div id="q5">
+		</div>
+		<div id="q6">
 			
 		</div>
 		<br>

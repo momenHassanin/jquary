@@ -1,0 +1,21 @@
+$("documnet").ready(function(){
+	$("#army").hide();
+	$("#formal").hide();
+	$("#uni").hide();
+	$("#ary").click(function(){
+		$("#army").show();
+		$("#formal").hide();
+		$("#uni").hide();
+	});
+	$("#for").click(function(){
+		$("#army").hide();
+		$("#formal").show();
+		$("#uni").hide();
+	});
+	$("#univ").click(function(){
+		$("#army").hide();
+		$("#formal").hide();
+		$("#uni").show();
+	});
+
+});
